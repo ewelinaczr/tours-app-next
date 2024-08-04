@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  position: relative;
+}
+
+.input {
+  padding-left: 2.6rem;
+  width: 41rem;
+}
+
+.button {
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.filterIcon {
+  object-fit: cover;
+  padding: 0.1rem;
+}
+
+.highlighted {
+  border: 2px solid var(--color-brand-purple);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.6rem;
+}
+
+.iconHighlighted {
+  filter: invert(39%) sepia(22%) saturate(3501%) hue-rotate(229deg)
+    brightness(102%) contrast(91%);
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 100%;
+  }
+  .input {
+    padding-left: 2.4rem;
+  }
+}

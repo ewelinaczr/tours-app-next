@@ -1,0 +1,25 @@
+.title {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--color-grey-4);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: var(--color-brand-purple);
+}
+
+.subtitlePrice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cost {
+  text-wrap: nowrap;
+  margin-left: 1rem;
+}
+
+.price {
+  font-weight: bold;
+}

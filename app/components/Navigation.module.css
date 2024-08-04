@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.toogleButton {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+@media (max-width: 600px) {
+  .toogleButton {
+    display: flex;
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 8.2rem;
+    right: 2rem;
+    background-color: white;
+    z-index: 2;
+    padding: 2rem;
+    padding-top: 0;
+    padding-right: 0;
+    border-radius: 0.4rem;
+  }
+
+  .active {
+    display: flex;
+  }
+}

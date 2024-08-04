@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  /* overflow: hidden; */
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 0; */
+  width: var(--image-width);
+}
+
+.image {
+  --image-width: 35em;
+  position: relative;
+  display: block;
+  width: var(--image-width);
+  min-height: calc(var(--image-width) * 9 / 16);
+  overflow: hidden;
+}

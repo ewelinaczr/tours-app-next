@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  gap: 1rem;
+}
+
+.iconContainer {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.icon {
+  margin-top: 1rem;
+}
+
+.label {
+  font-weight: bold;
+  color: var(--color-grey-4);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.shortInfo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .shortInfo {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1rem;
+  }
+}

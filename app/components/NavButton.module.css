@@ -1,0 +1,22 @@
+.button {
+  height: 3rem;
+  width: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.highlighted {
+  color: var(--color-brand-purple);
+  border-color: #0000;
+  border-width: 2px;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(90deg, var(--color-brand-purple), var(--color-brand-green))
+      border-box;
+}
+
+.iconHighlighted {
+  filter: invert(39%) sepia(22%) saturate(3501%) hue-rotate(229deg)
+    brightness(102%) contrast(91%);
+}
