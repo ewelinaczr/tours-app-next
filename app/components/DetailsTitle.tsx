@@ -12,13 +12,13 @@ function DetailsTitle({
 }) {
   return (
     <div>
-      <span className={styles.title}>{title}</span>
-      <div className={styles.subtitlePrice}>
-        <p className={styles.subtitle}>{subtitle}</p>
+      <div className={styles.titlePrice}>
+        <span className={styles.title}>{title}</span>
         <p className={styles.cost}>
           <span className={styles.price}>${price}</span> per person
         </p>
       </div>
+      <p className={styles.subtitle}>{subtitle}</p>
     </div>
   );
 }

@@ -8,6 +8,7 @@ import DetailsTitle from "../../components/DetailsTitle";
 import DetailsTourPlan from "../../components/DetailsTourPlan";
 import DetailsCheckoutBar from "../../components/DetailsCheckoutBar";
 import DetailsSidebar from "../../components/DetailsSidebar";
+import DetailsCarousel from "../../components/DetailsCarousel";
 import { Tour } from "@/app/data/tourInterface";
 import Separator from "@/app/ui/Separator";
 
@@ -27,7 +28,7 @@ export default async function Page({ params }: { params: { tourId: string } }) {
     id,
     destination,
     subTitle,
-    description,
+    descrition,
     price,
     priceDiscount,
     rating,
@@ -53,14 +54,18 @@ export default async function Page({ params }: { params: { tourId: string } }) {
     createdAt,
   } = tour as Tour;
 
-  console.log(tour);
   if (!tour) {
     return null;
   }
 
   return (
     <div className={styles.container}>
-      {/* <DetailsSidebar id={id} photos={photos}></DetailsSidebar> */}
+      <div className={styles.sideGallery}>
+        <DetailsSidebar id={id} photos={photos}></DetailsSidebar>
+      </div>
+      <div className={styles.topGallery}>
+        <DetailsCarousel photos={photos}></DetailsCarousel>
+      </div>
       <div className={styles.detailsContainer}>
         <DetailsTitle
           title={destination}
@@ -68,11 +73,15 @@ export default async function Page({ params }: { params: { tourId: string } }) {
           price={price}
         ></DetailsTitle>
         <DetailsInfoBar></DetailsInfoBar>
-        <DetailsShortInfo tour={tour}></DetailsShortInfo> <Separator />
-        <DetailsDescription></DetailsDescription>
-        <Separator />
-        <DetailsTourPlan></DetailsTourPlan>
-        <Separator />
+        <DetailsShortInfo tour={tour}></DetailsShortInfo>
+        <Separator></Separator>
+        <DetailsDescription description={descrition}></DetailsDescription>
+        <Separator></Separator>
+        <DetailsTourPlan
+          tourPlan={tourPlan}
+          attractions={attractions}
+        ></DetailsTourPlan>
+        <Separator></Separator>
         <DetailsCheckoutBar></DetailsCheckoutBar>
       </div>
     </div>

@@ -41,7 +41,7 @@ function DetailsShortInfo({ tour }: { tour: Tour }) {
       iconSrc: "/callendar.svg",
       iconAlt: "Tour start date icon",
       dataSource: "startDates",
-      iconSize: 18,
+      iconSize: 16,
     },
 
     {
@@ -49,28 +49,28 @@ function DetailsShortInfo({ tour }: { tour: Tour }) {
       iconSrc: "/clock.svg",
       iconAlt: "Tour duration icon",
       dataSource: "duration",
-      iconSize: 18,
+      iconSize: 16,
     },
     {
       label: "weather",
       iconSrc: "/sun.svg",
       iconAlt: "Local weather icon",
       dataSource: "weather",
-      iconSize: 21,
+      iconSize: 19,
     },
     {
       label: "group size",
       iconSrc: "/group.svg",
       iconAlt: "group size icon",
       dataSource: "groupSize",
-      iconSize: 23,
+      iconSize: 21,
     },
     {
       label: "flight",
       iconSrc: "/plane.svg",
       iconAlt: "Flight duration icon",
       dataSource: "flyghtduration",
-      iconSize: 20,
+      iconSize: 18,
     },
     {
       label: "reviews",
@@ -78,21 +78,21 @@ function DetailsShortInfo({ tour }: { tour: Tour }) {
       iconAlt: "Tour rating icon",
       dataSource: "rating",
       dataSourceAdditional: "ratingQuantity",
-      iconSize: 20,
+      iconSize: 18,
     },
     {
       label: "distance",
       iconSrc: "/distance.svg",
       iconAlt: "Distance icon",
       dataSource: "distance",
-      iconSize: 25,
+      iconSize: 23,
     },
     {
       label: "difficulty",
       iconSrc: "/difficulty.svg",
       iconAlt: "Tour difficulty icon",
       dataSource: "difficulty",
-      iconSize: 22,
+      iconSize: 20,
     },
   ];
 
@@ -103,7 +103,7 @@ function DetailsShortInfo({ tour }: { tour: Tour }) {
       .map((property) => String(property));
 
     return (
-      <div className={styles.container}>
+      <div className={styles.container} key={info.label}>
         <div className={styles.iconContainer}>
           <Image
             src={info.iconSrc}

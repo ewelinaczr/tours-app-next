@@ -37,6 +37,7 @@ body {
   min-height: 100vh;
   font-size: 1.6rem;
   padding: 3rem 4rem;
+  text-align: justify;
 }
 
 a {
@@ -46,6 +47,11 @@ a {
 
 li {
   list-style-type: none;
+}
+
+h5 {
+  font-size: 1.6rem;
+  color: var(--color-brand-purple);
 }
 
 button,

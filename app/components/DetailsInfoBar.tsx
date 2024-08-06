@@ -1,7 +1,7 @@
 import React from "react";
 
 function DetailsInfoBar() {
-  return <div></div>;
+  return <div>Info bar</div>;
 }
 
 export default DetailsInfoBar;

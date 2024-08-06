@@ -1,0 +1,29 @@
+.tourItem {
+display: flex;
+align-items: flex-start;
+}
+
+.itemIndex {
+    background-color: var(--color-brand-purple);
+    color: white;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    margin-top: 0.4rem;
+}
+
+.emptyItemIndex {
+    background-color: var(--color-brand-purple);
+    width: 1rem;
+    height: 1rem;
+    min-width: 1rem;
+    min-height: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.4rem;
+}

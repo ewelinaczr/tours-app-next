@@ -1,0 +1,55 @@
+.image {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 40rem;
+  overflow: hidden;
+}
+
+.arrow {
+  color: var(--color-brand-purple);
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 4.4rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.right {
+  right: 1rem;
+}
+
+.left {
+  left: 1rem;
+}
+
+@media (max-width: 900px) {
+  .image {
+    height: 30rem;
+  }
+  .arrow {
+    width: 3.3rem;
+    height: 3.3rem;
+    border-radius: 3.3rem;
+    top: 12rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .image {
+    height: 20rem;
+  }
+  .arrow {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 4rem;
+    top: 7.4rem;
+  }
+}

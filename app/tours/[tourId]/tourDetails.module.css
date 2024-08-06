@@ -4,7 +4,27 @@
 }
 
 .detailsContainer {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.topGallery {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sideGallery {
+    display: none;
+  }
+
+  .topGallery {
+    display: block;
+  }
 }

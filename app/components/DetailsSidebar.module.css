@@ -10,10 +10,20 @@
 }
 
 .image {
-  --image-width: 35em;
+  --image-width: 45rem;
   position: relative;
   display: block;
   width: var(--image-width);
   min-height: calc(var(--image-width) * 9 / 16);
   overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-height: 10rem;
+    flex-direction: row;
+  }
+  .image {
+    width: 100vw;
+  }
 }

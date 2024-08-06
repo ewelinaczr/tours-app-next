@@ -10,9 +10,10 @@
   color: var(--color-brand-purple);
 }
 
-.subtitlePrice {
+.titlePrice {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .cost {

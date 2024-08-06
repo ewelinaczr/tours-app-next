@@ -54,7 +54,7 @@ export default function DetailsSidebar({
               src={photo}
               alt="Tour photo"
               fill
-              sizes="(max-width: 40rem) 100vw"
+              sizes="(max-width: 20rem) 100vw"
               style={{ objectFit: "cover" }}
             />
           </div>
