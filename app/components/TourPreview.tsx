@@ -32,7 +32,10 @@ export default function TourPreview({ tour }: { tour: Tour }) {
 
   return (
     <div className={styles.previewContainer}>
-      <Link href={`/tours/${tour.id}`} className={styles.imageContainer}>
+      <Link
+        href={`/tours/${tour.id}/generalInfo`}
+        className={styles.imageContainer}
+      >
         {renderFavoriteIcon()}
         {renderOfferLabels()}
         <Image

@@ -1,16 +1,13 @@
+import { Tour } from "@/app/data/tourInterface";
 import { getTour } from "@/app/services/apiTours";
 import styles from "./tourDetails.module.css";
 
-import DetailsDescription from "../../components/DetailsDescription";
-import DetailsInfoBar from "../../components/DetailsInfoBar";
-import DetailsShortInfo from "../../components/DetailsShortInfo";
-import DetailsTitle from "../../components/DetailsTitle";
-import DetailsTourPlan from "../../components/DetailsTourPlan";
-import DetailsCheckoutBar from "../../components/DetailsCheckoutBar";
-import DetailsSidebar from "../../components/DetailsSidebar";
-import DetailsCarousel from "../../components/DetailsCarousel";
-import { Tour } from "@/app/data/tourInterface";
+import DetailsSidebar from "@/app/components/DetailsSidebar";
+import DetailsCarousel from "@/app/components/DetailsCarousel";
+import DetailsTitle from "@/app/components/DetailsTitle";
+import DetailsInfoBar from "@/app/components/DetailsInfoBar";
 import Separator from "@/app/ui/Separator";
+import DetailsCheckoutBar from "@/app/components/DetailsCheckoutBar";
 
 export async function generateMetadata({
   params,
@@ -21,7 +18,13 @@ export async function generateMetadata({
   return { title: tour?.destination };
 }
 
-export default async function Page({ params }: { params: { tourId: string } }) {
+export default async function RootLayout({
+  params,
+  children,
+}: Readonly<{
+  params: { tourId: string };
+  children: React.ReactNode;
+}>) {
   const tour = await getTour(params.tourId);
 
   const {
@@ -73,14 +76,7 @@ export default async function Page({ params }: { params: { tourId: string } }) {
           price={price}
         ></DetailsTitle>
         <DetailsInfoBar></DetailsInfoBar>
-        <DetailsShortInfo tour={tour}></DetailsShortInfo>
-        <Separator></Separator>
-        <DetailsDescription description={descrition}></DetailsDescription>
-        <Separator></Separator>
-        <DetailsTourPlan
-          tourPlan={tourPlan}
-          attractions={attractions}
-        ></DetailsTourPlan>
+        <main>{children}</main>
         <Separator></Separator>
         <DetailsCheckoutBar></DetailsCheckoutBar>
       </div>

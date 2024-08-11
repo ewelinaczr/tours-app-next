@@ -6,7 +6,7 @@ import styles from "./DetailsCarousel.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
-export default function DetailsSidebar({ photos }: { photos: string[] }) {
+export default function DetailsCarousel({ photos }: { photos: string[] }) {
   const [photoIndex, setPhotoIndex] = useState<number>(0);
 
   function handleClick(direction: number) {
