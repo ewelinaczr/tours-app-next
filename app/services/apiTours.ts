@@ -12,7 +12,9 @@ export async function getTours() {
 
 export async function getFilteredTours(searchParams: string) {
   try {
-    const response = await fetch(`api/v1/tours?${searchParams}`);
+    const response = await fetch(
+      `http://localhost:3000/api/v1/tours?${searchParams}`
+    );
     const data = await response.json();
     return data ? prepareTours(data.data) : undefined;
   } catch (error) {

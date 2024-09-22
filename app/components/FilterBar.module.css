@@ -7,6 +7,10 @@
   cursor: pointer;
 }
 
+.selected {
+  font-weight: bold;
+}
+
 @media (max-width: 800px) {
   .bar {
     gap: 1rem;

@@ -20,34 +20,40 @@ export enum Destination {
 }
 
 export enum Meals {
-  ALL_INCLUSIVR = "All Inclusive",
+  ALL = "All",
+  ALL_INCLUSIVE = "All Inclusive",
   HALF_BOARD = "Breakfast, half-board",
   BREAKFAST = "Breakfast",
 }
 
 export enum DepartureAirport {
+  ALL = "All",
   WARSAW = "Warsaw",
   CRACOW = "Cracow",
 }
 
 export enum TourType {
+  ALL = "All",
   ROUND_TRIP = "Round trip",
   LEISURE = "Leisure",
 }
 
 export enum DepartureTime {
+  ALL = "All",
   JUNE = "01.06.2024",
   JULY = "01.07.2024",
   AUGUST = "01.08.2024",
 }
 
 export enum Difficulty {
+  ALL = "All",
   MEDIUM = "medium",
   DIFFICULT = "difficult",
   EASY = "easy",
 }
 
 export enum Duration {
+  ALL = "All",
   SHORT = "10 days",
   MEDIUM = "15 days",
   LONG = "20 days",
@@ -67,7 +73,7 @@ export enum Facilities {
 }
 
 export interface Tour {
-  id: string;
+  _id: string;
   destination: Destination;
   subTitle: string;
   description: string;

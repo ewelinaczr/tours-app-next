@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: { tourId: string } }) {
     <div className={styles.contaner}>
       <DetailsShortInfo tour={tour}></DetailsShortInfo>
       <Separator></Separator>
-      <DetailsDescription description={tour.descrition}></DetailsDescription>
+      <DetailsDescription description={tour.description}></DetailsDescription>
       <Separator></Separator>
       <DetailsTourPlan
         tourPlan={tour.tourPlan}

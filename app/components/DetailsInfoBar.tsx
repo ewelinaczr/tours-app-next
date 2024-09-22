@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./FilterBar.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function DetailsInfoBar() {
+  const pathname = usePathname();
   const tourInfo = [
     { title: "General Info", link: "/generalInfo" },
     { title: "Hotel", link: "/hotel" },
@@ -13,10 +14,18 @@ export default function DetailsInfoBar() {
   ];
 
   function TourInfoItem({ title, link }: { title: string; link: string }) {
-    const tourId = usePathname().split("/")[2];
+    const tourId = pathname.split("/")[2];
+    const currentLink = pathname.split("/").pop();
+    console.log(currentLink, link);
     return (
       <Link href={`/tours/${tourId}/${link}`}>
-        <span>{title}</span>
+        <span
+          className={
+            currentLink === link.replace("/", "") ? styles.selected : ""
+          }
+        >
+          {title}
+        </span>
       </Link>
     );
   }

@@ -1,10 +1,13 @@
-import React from "react";
-import { Tour } from "../data/tourInterface";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./TourPreview.module.css";
+import { Tour } from "../data/tourInterface";
+import { useTourFilters } from "../store/TourFiltersContext";
 
 export default function TourPreview({ tour }: { tour: Tour }) {
+  const { filtersState, addToFavoriteTours } = useTourFilters();
+
   function renderOfferLabels() {
     return (
       <div className={styles.offerLabels}>
@@ -18,14 +21,22 @@ export default function TourPreview({ tour }: { tour: Tour }) {
     );
   }
 
+  function addToFavoritesHandler(event: React.MouseEvent, id: string) {
+    event.preventDefault();
+    addToFavoriteTours(id);
+  }
+
   function renderFavoriteIcon() {
     return (
       <Image
-        className={styles.favorite}
+        className={`${styles.heart} ${
+          filtersState.favoriteTours.includes(tour._id) && styles.favorite
+        }`}
         src="/heart.svg"
         alt="Favorite tour icon"
         width={20}
         height={20}
+        onClick={(e) => addToFavoritesHandler(e, tour._id)}
       />
     );
   }
@@ -33,7 +44,7 @@ export default function TourPreview({ tour }: { tour: Tour }) {
   return (
     <div className={styles.previewContainer}>
       <Link
-        href={`/tours/${tour.id}/generalInfo`}
+        href={`/tours/${tour._id}/generalInfo`}
         className={styles.imageContainer}
       >
         {renderFavoriteIcon()}
@@ -44,6 +55,7 @@ export default function TourPreview({ tour }: { tour: Tour }) {
           alt="Tour preview photo"
           fill
         />
+        <div className={styles.blur}></div>
       </Link>
       <div className={styles.info}>
         <div className={styles.row}>

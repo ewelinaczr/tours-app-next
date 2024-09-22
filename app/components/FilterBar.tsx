@@ -2,9 +2,19 @@
 import React from "react";
 
 import styles from "./FilterBar.module.css";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function FilterBar() {
   // { setParams }: { setParams: () => void }
+  const path = usePathname();
+  const router = useRouter();
+
+  function handleFilter(params: string) {
+    const url = path.concat(`?${params}`);
+    router.replace(url);
+  }
+
   const sortingFilters = [
     { title: "All Tours", params: "" },
     { title: "Popular", params: "bestseller=true" },
@@ -25,6 +35,7 @@ export default function FilterBar() {
     return (
       <span
         onClick={() => {
+          handleFilter(params);
           // setParams(params);
         }}
       >

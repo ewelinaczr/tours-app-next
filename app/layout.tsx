@@ -1,5 +1,8 @@
-import Navigation from "./components/Navigation";
+import { TourFiltersProvider } from "./store/TourFiltersContext";
+
 import "./globals.css";
+
+import Navigation from "./components/Navigation";
 
 export const metadata = {
   title: "Discover Asia",
@@ -14,7 +17,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navigation />
-        <main>{children}</main>
+
+        <TourFiltersProvider>
+          <main>{children}</main>
+        </TourFiltersProvider>
       </body>
     </html>
   );

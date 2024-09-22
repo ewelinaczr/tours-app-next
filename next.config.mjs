@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -22,6 +23,8 @@ const nextConfig = {
       },
     ],
   },
+  // Export as static assets to deploy to hosting provider
+  // output: "export",
 };
 
 export default nextConfig;

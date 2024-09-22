@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+input.checked {
+  position: relative;
+}
+
+input.checked::before {
+  content: "";
+  position: absolute;
+  right: 0.4rem;
+  top: 0.4rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  background-color: var(--color-brand-purple);
+}
+
+.input {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* creating a custom design */
+  width: 2rem;
+  height: 2rem;
+  border-color: var(--color-grey-1);
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import { Tour } from "@/app/data/tourInterface";
-import { getTour } from "@/app/services/apiTours";
+import { getTour, getTours } from "@/app/services/apiTours";
 import styles from "./tourDetails.module.css";
 
 import DetailsSidebar from "@/app/components/DetailsSidebar";
@@ -18,6 +18,15 @@ export async function generateMetadata({
   return { title: tour?.destination };
 }
 
+// Make dynamic pages static
+export async function generateStaticParams() {
+  const tours = await getTours();
+  const ids = tours?.map((tour) => ({
+    tourId: tour._id,
+  }));
+  return ids;
+}
+
 export default async function RootLayout({
   params,
   children,
@@ -27,35 +36,7 @@ export default async function RootLayout({
 }>) {
   const tour = await getTour(params.tourId);
 
-  const {
-    id,
-    destination,
-    subTitle,
-    descrition,
-    price,
-    priceDiscount,
-    rating,
-    ratingQuantity,
-    startDates,
-    duration,
-    airport,
-    tourType,
-    meals,
-    facilities,
-    groupSize,
-    flightDuration,
-    distance,
-    weather,
-    bestseller,
-    lastMinute,
-    difficulty,
-    tourPlan,
-    locations,
-    attractions,
-    guides,
-    photos,
-    createdAt,
-  } = tour as Tour;
+  const { _id, destination, subTitle, price, photos } = tour as Tour;
 
   if (!tour) {
     return null;
@@ -64,7 +45,7 @@ export default async function RootLayout({
   return (
     <div className={styles.container}>
       <div className={styles.sideGallery}>
-        <DetailsSidebar id={id} photos={photos}></DetailsSidebar>
+        <DetailsSidebar id={_id} photos={photos}></DetailsSidebar>
       </div>
       <div className={styles.topGallery}>
         <DetailsCarousel photos={photos}></DetailsCarousel>

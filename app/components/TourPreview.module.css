@@ -1,5 +1,5 @@
 .previewContainer {
-  width: 1005;
+  width: 100%;
 }
 
 .imageContainer {
@@ -27,6 +27,7 @@
   padding: 0.1rem 1rem;
   border-radius: 0.4rem;
   background-color: var(--color-brand-green);
+  font-size: 12px;
 }
 
 .lastMinute {
@@ -35,15 +36,21 @@
   padding: 0.1rem 1rem;
   border-radius: 0.4rem;
   background-color: var(--color-brand-purple);
+  font-size: 12px;
 }
 
-.favorite {
+.heart {
   position: absolute;
   margin: 1rem;
   top: 0;
   right: 0;
   display: flex;
   z-index: 1;
+}
+
+.favorite {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(97%) saturate(6591%)
+    hue-rotate(342deg) brightness(101%) contrast(113%);
 }
 
 .row {
@@ -56,11 +63,23 @@
 .destination {
   margin-top: 1rem;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
-.info {
-  padding: 0 1rem;
+.blur {
+  display: block;
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: grey;
+  opacity: 0.6;
+}
+
+.blur:hover {
+  opacity: 0;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {

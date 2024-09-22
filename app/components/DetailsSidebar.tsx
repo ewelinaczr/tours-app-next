@@ -13,8 +13,8 @@ export default function DetailsSidebar({
   photos: string[];
 }) {
   const myRef = useRef<HTMLDivElement | null>(null);
-  const [scrollY, setScrollY] = useState(window.scrollY);
-  const [scrollDierection, setScrollDirection] = useState(0);
+  // const [scrollY, setScrollY] = useState(window.scrollY);
+  // const [scrollDierection, setScrollDirection] = useState(0);
 
   // const handleNavigation = useCallback(
   //   (event) => {

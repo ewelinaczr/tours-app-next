@@ -1,21 +1,24 @@
-import React from "react";
-import { getTours } from "../services/apiTours";
+"use client";
+import React, { useEffect } from "react";
+import { Tour } from "../data/tourInterface";
 import styles from "./ToursGrid.module.css";
 
 import TourPreview from "./TourPreview";
+import { useTourFilters } from "../store/TourFiltersContext";
 
-export default async function ToursGrid() {
-  //   const [filter, setFilter] = useState<TourFilters>(initialFilters);
-  //   const [sortFilter, setSortFilter] = useState<string>("");
-  //   const [searchParams, setSearchParams] = useSearchParams();
+export default function ToursGrid({ tours }: { tours: Tour[] | undefined }) {
+  const { setTours, getFilteredTours } = useTourFilters();
 
-  const tours = await getTours();
+  useEffect(() => {
+    setTours(tours);
+  }, [tours]);
 
-  if (!tours?.length) return null;
+  if (!getFilteredTours()?.length)
+    return <p>No tours maching applied filters. Try to change cryteria.</p>;
 
   return (
     <div className={styles.grid}>
-      {tours?.map((tour, index) => {
+      {getFilteredTours()?.map((tour, index) => {
         return <TourPreview key={`tour-preview-${index}`} tour={tour} />;
       })}
     </div>
