@@ -29,7 +29,8 @@
     "app/loading.js",
     "app/tours/loading.js",
     "app/not-found.js",
-    "app/error.js"
+    "app/error.js",
+    "env.local"
   ],
   "exclude": ["node_modules"]
 }

@@ -7,7 +7,7 @@ import styles from "./Navigation.module.css";
 import Logo from "./Logo";
 import NavButton from "./NavButton";
 
-export default function Navigation() {
+export default function Navigation({ user }: { user: any }) {
   const [expandMenu, setExpandMenu] = useState<boolean>(false);
   const [selectedButtonIndex, setSelectedButtonIndex] = useState<number>(0);
 
@@ -18,14 +18,14 @@ export default function Navigation() {
       link: "/tours",
     },
     {
-      text: "Login",
-      icon: "/profile.svg",
-      link: "/login",
-    },
-    {
       text: "Cart",
       icon: "/cart.svg",
       link: "/cart",
+    },
+    {
+      text: user?.name ?? "Login",
+      icon: "/profile.svg",
+      link: user?.name ? "/profile" : "/login",
     },
   ];
 

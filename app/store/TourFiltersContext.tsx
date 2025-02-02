@@ -277,7 +277,6 @@ function TourFiltersProvider({ children }: { children: ReactElement }) {
   };
 
   const getFilteredTours = () => {
-    console.log(filtersState);
     const filteredTours = [
       filterByMeals(),
       filterByTourType(),

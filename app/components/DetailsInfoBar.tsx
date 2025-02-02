@@ -16,7 +16,7 @@ export default function DetailsInfoBar() {
   function TourInfoItem({ title, link }: { title: string; link: string }) {
     const tourId = pathname.split("/")[2];
     const currentLink = pathname.split("/").pop();
-    console.log(currentLink, link);
+
     return (
       <Link href={`/tours/${tourId}/${link}`}>
         <span

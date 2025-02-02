@@ -1,0 +1,42 @@
+.formContainer {
+  width: 100%;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.inputLabel {
+  font-size: 1.4rem;
+  color: var(--color-grey-4);
+  margin-bottom: 0.2rem;
+}
+
+.button {
+  width: 20rem;
+  font-weight: bold;
+  color: var(--color-grey-4);
+  padding: 0;
+}
+
+.button:hover {
+  color: var(--color-brand-purple);
+  border-color: var(--color-brand-purple);
+  border-width: 2px;
+}
+
+.input:hover {
+  border-color: var(--color-brand-purple);
+  border-width: 2px;
+}
+
+.message {
+  display: block;
+  height: 1.4rem;
+  color: var(--color-notification-error);
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

@@ -86,7 +86,7 @@ function FilterMenu() {
               boundries={[1, 10]}
               step={1}
               value={0}
-              setValue={() => console.log("a")}
+              setValue={() => console.log("set value")}
             ></CountInput>
           </div>
           <div className={styles.countInput}>
@@ -95,7 +95,7 @@ function FilterMenu() {
               boundries={[1, 20]}
               step={5}
               value={0}
-              setValue={() => console.log("a")}
+              setValue={() => console.log("set value")}
             ></CountInput>
           </div>
         </div>

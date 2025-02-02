@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export function middleware(request: Request) {
+export function paramsMiddleware(request: Request) {
   const url = new URL(request.url);
   const origin = url.origin;
   const pathname = url.pathname;
@@ -14,4 +14,12 @@ export function middleware(request: Request) {
       headers: requestHeaders,
     },
   });
+}
+
+export function middleware(request: NextRequest) {
+  if (request.nextUrl.pathname.startsWith("/tours")) {
+    return paramsMiddleware(request);
+  }
+
+  return NextResponse.next();
 }

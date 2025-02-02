@@ -27,16 +27,10 @@ export default function NavButton({
           alt={text}
           width={15}
           height={15}
+          referrerPolicy="no-referrer"
         />
         {text}
       </button>
     </Link>
   );
 }
-/*
-
-<div> position: relative, aspect ratio: 1/1 
-<Image className={styles.icon} fill src={icon} alt={text} /> 
-object fit: cover
-</div>;
-*/

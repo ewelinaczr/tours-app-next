@@ -13,37 +13,6 @@ export default function DetailsSidebar({
   photos: string[];
 }) {
   const myRef = useRef<HTMLDivElement | null>(null);
-  // const [scrollY, setScrollY] = useState(window.scrollY);
-  // const [scrollDierection, setScrollDirection] = useState(0);
-
-  // const handleNavigation = useCallback(
-  //   (event) => {
-  //     const window = event.currentTarget;
-  //     let direction = 0;
-  //     if (scrollY > window.scrollY) {
-  //       direction = 1;
-  //       if (direction !== scrollDierection) {
-  //         setScrollDirection(1);
-  //         console.log("scroll up");
-  //       }
-  //       setScrollDirection(1);
-  //     } else if (scrollY < window.scrollY) {
-  //       direction = -1;
-  //       if (direction !== scrollDierection) {
-  //         setScrollDirection(-1);
-  //         console.log("scroll down");
-  //       }
-  //     }
-  //     setScrollY(window.scrollY);
-  //   },
-  //   [scrollY]
-  // );
-
-  // useEffect(() => {
-  //   setScrollY(window.scrollY);
-  //   window.addEventListener("scroll", handleNavigation);
-  //   return () => window.removeEventListener("scroll", handleNavigation);
-  // }, [handleNavigation]);
 
   return (
     <div className={styles.container} ref={myRef}>
